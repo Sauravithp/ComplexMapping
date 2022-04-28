@@ -6,14 +6,11 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@Entity(name = "Payment")
+@Embeddable
 @Getter
 @Setter
 @ToString
 public  class Payment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Column
     private String payDate;

@@ -29,6 +29,9 @@ public class Appointment {
     private Patient patient;
 
     @OneToOne
-    @JoinColumn(name = "Payment_Id")
+    @JoinColumn(name = "Doctor_Id")
+    private Doctor doctor;
+
+   @Embedded
     private Payment payment;
 }

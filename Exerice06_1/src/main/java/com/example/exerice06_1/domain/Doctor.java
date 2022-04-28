@@ -11,18 +11,18 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-public abstract class Doctor {
+public  class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "Type")
     private String doctorType;
 
-    @Column
+    @Column(name = "FirstName")
     private String firstName;
 
-    @Column
+    @Column(name = "LastName")
     private String lastName;
 }

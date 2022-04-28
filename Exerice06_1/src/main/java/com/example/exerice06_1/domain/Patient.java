@@ -11,24 +11,26 @@ import javax.persistence.*;
 @Table(name = "Patient")
 @Getter
 @Setter
-@RequiredArgsConstructor
 @ToString
+@SecondaryTables(@SecondaryTable(name = "Address",pkJoinColumns = {
+        @PrimaryKeyJoinColumn(name = "Patient_Id",referencedColumnName = "id")
+}))
 public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "Name")
     private String name;
 
-    @Column
+    @Column(table = "Address")
     private String street;
 
-    @Column
+    @Column(table = "Address")
     private String zip;
 
-    @Column
+    @Column(table = "Address")
     private String city;
 
 }
